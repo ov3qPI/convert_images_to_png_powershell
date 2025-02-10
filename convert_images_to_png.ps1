@@ -3,12 +3,12 @@ $count = 0
 $total = 0
 
 # Count how many .jpg and .jpeg files are in the directory and subdirectories
-Get-ChildItem -Path D:\ -Recurse -Include *.jpg, *.jpeg | ForEach-Object {
+Get-ChildItem -Path D:\ -Recurse -Include *.jpg, *.jpeg *.webp | ForEach-Object {
     $total++
 }
 
 # Process the files
-Get-ChildItem -Path D:\ -Recurse -Include *.jpg, *.jpeg | ForEach-Object {
+Get-ChildItem -Path D:\ -Recurse -Include *.jpg, *.jpeg *.webp | ForEach-Object {
     $file = $_
     $outputFile = "$($file.DirectoryName)\$($file.BaseName).png"
     
